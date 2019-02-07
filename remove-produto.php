@@ -1,17 +1,30 @@
-<?php 
-
+<?php
       include("cabecalho.php");
       include("conexao.php");
 
-function removeProduto($id,$conexao){
-	
-	$query = "DELETE FROM produtos WHERE id = {$id}";
-	return mysql_query($query,$conexao);
-}    
-
-var_dump($conexao);
 $id = $_GET['id'];
-removeProduto($id,$conexao);
+removeProduto($conexao,$id);
 header("Location: lista-produto.php");
 die();
+
+function removeProduto ($conexao,$id){
+
+	$query = "DELETE FROM produtos WHERE id = {$id}";
+	$resultado = mysql_query($query,$conexao);
+	return $resultado;
+}    
+ if ($resultado){ 
+	?>
+		<p class="text-success">Produto removido com sucesso!</p>
+
+		<?php } else { 
+			
+			?>
+		<p class="text-danger">Erro ao remover o produto!</p>
+
+	<?php }
+				 
+	?>
+
 ?>
+<?php include("rodape.php"); ?>

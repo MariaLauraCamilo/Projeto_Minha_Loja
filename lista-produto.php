@@ -18,15 +18,14 @@
     <?php
         $merc = listaProdutos($conexao);
         foreach ($merc as $produto) :
-
            
     ?>
     <tr>
         <td><?=$produto['nome'] ?></td>
         <td><?=$produto['preco'] ?></td>
-        <td>
-           <a href="remove-produto.php?id=<?$produto['id']?>" class="text-danger">remover</a>
-        </td>
+       <td>
+        <a href="remove-produto.php?id=<?=$produto['id']?>" class="btn btn-danger">Remover</a>
+       </td>
     </tr>
     <?php
         endforeach
