@@ -4,6 +4,7 @@
       include("conexao.php");
 
 function removeProduto($id,$conexao){
+	
 	$query = "DELETE FROM produtos WHERE id = {$id}";
 	return mysql_query($query,$conexao);
 }    

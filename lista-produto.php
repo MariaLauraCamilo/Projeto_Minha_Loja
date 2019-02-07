@@ -4,11 +4,11 @@
       include("banco-produto.php"); 
       ?>
 <?php 
-    /*if (array_key_exists("removido", $_GET) && $_GET["removido"]=="true") {
+    if (array_key_exists("removido", $_GET) && $_GET["removido"]=="true") {
 ?>
 <p class="alert-success">Produto apagado com sucesso!</p>
 <?php
-    }*/
+    }
 ?>
 
 
