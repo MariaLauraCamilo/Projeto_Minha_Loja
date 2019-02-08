@@ -4,7 +4,7 @@
 		background-color: #FFFFFF;
 	}
 </style>
-<h1 style="color: #00BFFF">Formulário de Cadastro</h1>
+<h1 style="color: #DC143C">Formulário de Cadastro</h1>
 	<form action="adiciona-produto.php">
 		<table class="table">
 			<tr>
@@ -17,10 +17,14 @@
 				<td style="color: #696969">Preço</td>
 				<td><input class="form-control" type="number" name="preco"><br/></td>
 			</tr>
-
 			<tr>
-				<td><input style="background-color: #008B8B" class="btn btn-primary" type="submit" value="Cadastrar" ></td>
+				<td>Descrição</td>
+				<td><textarea name="descricao" class="form-control"></textarea></td>
 			</tr>
+			<tr>
+				<td><input style="background-color:#4682B4" class="btn btn-primary" type="submit" value="Cadastrar" ></td>
+			</tr>
+			
 		</table>
 	
 	</form>

@@ -12,7 +12,7 @@
 ?>
 
 
-<h1 style="color: #00BFFF">Lista de Produtos</h1>
+<h1 style="color: #DC143C">Lista de Produtos</h1>
 <table class="table table-striped table-bordered">
 
     <?php
@@ -23,8 +23,9 @@
     <tr>
         <td><?=$produto['nome'] ?></td>
         <td><?=$produto['preco'] ?></td>
+        <td><?=$produto['descricao'] ?></td>
        <td>
-        <a href="remove-produto.php?id=<?=$produto['id']?>" class="btn btn-danger">Remover</a>
+        <a href="remove-produto.php?id=<?=$produto['id']?>" class="btn btn-danger">X</a>
        </td>
     </tr>
     <?php

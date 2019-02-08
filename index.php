@@ -5,5 +5,5 @@
 
 		}
 	</style>
-	<h1 style="color: #00BFFF;">Bem Vindo!</h1>
+	<h1 style="color: #DC143C;">Bem Vindo!</h1>
 <?php include("rodape.php"); ?>
