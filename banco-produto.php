@@ -9,7 +9,3 @@ function listaProdutos($conexao){
 return $merc; 
 } 
 
-/*function removeProduto($conexao,$id){
-	$query = "DELETE FROM produtos WHERE id = {$id}";
-	return mysql_query($query,$conexao);
-}*/
