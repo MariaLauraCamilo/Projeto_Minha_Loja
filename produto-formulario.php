@@ -1,7 +1,6 @@
 <?php include("cabecalho.php"); 
 include ("conexao.php");
 include ("banco-categoria.php");
-
 $categorias = listaCategorias($conexao);
  
 ?>
@@ -30,13 +29,19 @@ $categorias = listaCategorias($conexao);
 				<td><textarea name="descricao" class="form-control" ></textarea></td>
 			</tr>
 			<tr>
+				<td></td>
+				<td><input type="checkbox" name="usado" value="true"> Usado
+			</tr>
+			<tr>
 				<td style="color: #696969">Categoria</td>
 				<td>
-					<?php foreach ($categorias as $categoria) : ?>
-						<input type="radio" name="categoria_nome" value="<?= $categoria['id']?>">
-						<?=$categoria['nome']?><br/>
-					<?php endforeach ?>
-					
+					<select name="categoria_nome" class="form-control">
+						<?php foreach ($categorias as $categoria) : ?>
+							<option value="<?= $categoria['id']?>">
+								<?=$categoria['nome']?><br/>
+							</option> 
+						<?php endforeach ?>
+					</select>
 				</td>
 			</tr>
 			<tr>
