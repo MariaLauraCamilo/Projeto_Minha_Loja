@@ -26,10 +26,14 @@
         <td><?= substr($produto['descricao'], 0, 40)?></td>
         <td><?=$produto['categoria_nome'] ?></td>
         <td>
+            <a class="btn btn-primary" href="altera-produto-formulario.php?id=<?=$produto['id']?>">Editar</a> 
+        </td>
+        <td>
             <form action="remove-produto.php?id=<?=$produto['id']?>" method="POST">
                 <button class="btn btn-danger">X</button>
             </form>
         </td>
+        
     </tr>
     <?php
         endforeach

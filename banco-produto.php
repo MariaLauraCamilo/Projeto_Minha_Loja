@@ -10,3 +10,22 @@ function listaProdutos($conexao){
 return $merc; 
 } 
 
+ function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado){
+ 	$query = "INSERT INTO produtos (nome, preco, descricao, categoria_id, usado) values ('{$nome}', {$preco}, '{$descricao}', {$categoria_id}, {$usado})";
+	$resultado = mysql_query($query,$conexao);
+	return $resultado;
+}
+ 
+function alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado){
+	$query = "UPDATE produtos SET nome='{$nome}', preco= {$preco} , descricao= '{$descricao}', categoria_id= {$categoria_id}, usado= {$usado} WHERE id = {$id}";
+	$resultado = mysql_query($query,$conexao);
+	
+	return $resultado;
+}
+
+function buscaProduto($conexao,$id){
+	$query = "SELECT id, nome, preco, descricao, categoria_id, usado FROM produtos WHERE id = {$id}";
+	$resultado = mysql_query($query,$conexao);
+	return mysql_fetch_assoc($resultado);
+}
+
