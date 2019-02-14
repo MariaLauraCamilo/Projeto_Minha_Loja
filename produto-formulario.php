@@ -10,6 +10,15 @@ $categorias = listaCategorias($conexao);
 	body{
 		background-color: #FFFFFF;
 	}
+	form {
+	    /* Apenas para centralizar o form na página */
+	    margin: 0 auto;
+	    width: 1100px;
+	    /* Para ver as bordas do formulário */
+	    padding: 2em;
+	    border: 2px solid #CCC;
+	    border-radius: 2em;
+		}
 </style>
 
 <h1 style="color: #DC143C">Formulário de Cadastro</h1>
@@ -45,7 +54,7 @@ $categorias = listaCategorias($conexao);
 				</td>
 			</tr>
 			<tr>
-				<td><input style="background-color:#4682B4" class="btn btn-primary" type="submit" value="Cadastrar"></td>
+				<td><input style="background-color:#006400" class="btn btn-primary" type="submit" value="Cadastrar"></td>
 			</tr>
 		</table>
 	</form>

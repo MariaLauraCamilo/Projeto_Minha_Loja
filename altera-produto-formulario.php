@@ -53,7 +53,7 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 				</td>
 			</tr>
 			<tr>
-				<td><input style="background-color:#4682B4" class="btn btn-primary" type="submit" value="Alterar"></td>
+				<td><input style="background-color:#006400" class="btn btn-primary" type="submit" value="Salvar"></td>
 			</tr>
 		</table>
 	</form>
