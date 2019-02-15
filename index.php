@@ -2,21 +2,6 @@
 include("logica-usuario.php");
 ?>
 
-<?php 
-
-//Success
-if (isset($_SESSION['success'])) { ?>
-	<p class="alert-success"><?= $_SESSION['success']?></p>
-<?php }  
-	unset($_SESSION['success']);
-	
-//Danger
-if (isset($_SESSION['danger'])) { ?>
-	<p class="alert-danger"><?= $_SESSION['danger']?></p>
-	<?php }  
-	unset($_SESSION['danger']);
-	?>
-
 <style type="text/css">
 		body {
 			background-color: #FFFFFF;
@@ -36,8 +21,8 @@ if (isset($_SESSION['danger'])) { ?>
 	//Validação de cookie
 		if (UsuarioEstaLogado()){ ?>
 		<p class="text-success">Você está logado como <?=usuarioLogado()?><a href="logout.php"><br/>Deslogar</a></p>
-		
-		<?php } else { ?>
+	<?php } else { ?>
+
 			<h2>Login</h2>
 			<form action="login.php" method="post" style="background-color: #DCDCDC">
 				<td><br></td>

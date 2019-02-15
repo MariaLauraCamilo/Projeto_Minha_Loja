@@ -1,7 +1,9 @@
 <?php include("cabecalho.php"); 
 include ("conexao.php");
 include ("banco-produto.php");
+include("logica-usuario.php");
 
+verificaUsuario();
 ?>
 	<?php 
 

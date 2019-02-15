@@ -1,7 +1,9 @@
 <?php
+
 session_start();
 function UsuarioEstaLogado(){
 	return isset($_SESSION['usuario_logado']);
+
 }
 
 function verificaUsuario(){
@@ -29,3 +31,4 @@ function logout(){
 /*function logout(){
 	#unset($_SESSION['usuario_logado']);
 }*/
+
