@@ -21,8 +21,7 @@ include("logica-usuario.php");
 	//Validação de cookie
 		if (UsuarioEstaLogado()){ ?>
 		<p class="text-success">Você está logado como <?=usuarioLogado()?><a href="logout.php"><br/>Deslogar</a></p>
-	<?php } else { ?>
-
+		<?php } else { ?>
 			<h2>Login</h2>
 			<form action="login.php" method="post" style="background-color: #DCDCDC">
 				<td><br></td>

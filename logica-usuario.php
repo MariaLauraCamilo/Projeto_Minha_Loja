@@ -3,7 +3,6 @@
 session_start();
 function UsuarioEstaLogado(){
 	return isset($_SESSION['usuario_logado']);
-
 }
 
 function verificaUsuario(){
@@ -26,9 +25,3 @@ function logout(){
 	session_destroy();
 	session_start();
 }
-
-//Outra forma de logout
-/*function logout(){
-	#unset($_SESSION['usuario_logado']);
-}*/
-

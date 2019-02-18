@@ -29,3 +29,9 @@ function buscaProduto($conexao,$id){
 	return mysql_fetch_assoc($resultado);
 }
 
+function removeProduto($conexao,$id){
+
+	$query = "DELETE FROM produtos WHERE id = {$id}";
+	$resultado = mysql_query($query,$conexao);
+	return $resultado;
+}

@@ -1,19 +1,16 @@
 <?php
       include("cabecalho.php");
       include("conexao.php");
+      include("banco-produto.php");
+      include("logica-usuario.php");
 
 $id = $_GET['id'];
 removeProduto($conexao,$id);
+$_SESSION['success'] = "Produto removido com sucesso!";
 header("Location: lista-produto.php");
 die();
-
-function removeProduto ($conexao,$id){
-
-	$query = "DELETE FROM produtos WHERE id = {$id}";
-	$resultado = mysql_query($query,$conexao);
-	return $resultado;
-}    
- if ($resultado){ 
+   
+ if (removeProduto($conexao,$id)){ 
 	?>
 		<p class="text-success">Produto removido com sucesso!</p>
 
