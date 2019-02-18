@@ -1,10 +1,22 @@
-<?php include("cabecalho.php"); ?>
-<?php  
-if ($_GET["login"] && $_GET["login"]== true) { ?>
-	<p class="alert-success">Logado com Sucesso!</p>
-<?php } else { ?>
-	<p class="alert-danger">Não foi possivel logar!</p>
-<?php } ?>
+<?php include("cabecalho.php"); 
+include("logica-usuario.php");
+?>
+
+<?php 
+
+//Success
+if (isset($_SESSION['success'])) { ?>
+	<p class="alert-success"><?= $_SESSION['success']?></p>
+<?php }  
+	unset($_SESSION['success']);
+	
+//Danger
+if (isset($_SESSION['danger'])) { ?>
+	<p class="alert-danger"><?= $_SESSION['danger']?></p>
+	<?php }  
+	unset($_SESSION['danger']);
+	?>
+
 <style type="text/css">
 		body {
 			background-color: #FFFFFF;
@@ -20,15 +32,22 @@ if ($_GET["login"] && $_GET["login"]== true) { ?>
 		}
 	</style>
 	<h1 style="color: #DC143C;">Bem Vindo!</h1>
-	<h2>Login</h2>
-	<form action="login.php" method="post" style="background-color: #DCDCDC">
-		<td><br></td>
-		<label>Email:</label><input type="text" name="email" style=" padding: 0.5em;
-	    border: 0.5px solid #CCC; border-radius: 0.5em ;"><br>
-	    <td><br></td>
-		<label>Senha:</label><input type="password" name="senha" style=" padding: 0.5em;
-	    border: 0.5px solid #CCC; border-radius: 0.5em;"><br>
-	    <td><br></td>
-		<input type="submit" value="Entrar" name="entrar" style="background-color:#006400" class="btn btn-primary">
-	</form>
+	<?php 
+	//Validação de cookie
+		if (UsuarioEstaLogado()){ ?>
+		<p class="text-success">Você está logado como <?=usuarioLogado()?><a href="logout.php"><br/>Deslogar</a></p>
+		
+		<?php } else { ?>
+			<h2>Login</h2>
+			<form action="login.php" method="post" style="background-color: #DCDCDC">
+				<td><br></td>
+				<label>Email:</label><input type="text" name="email" style=" padding: 0.5em;
+			    border: 0.5px solid #CCC; border-radius: 0.5em ;"><br>
+			    <td><br></td>
+				<label>Senha:</label><input type="password" name="senha" style=" padding: 0.5em;
+			    border: 0.5px solid #CCC; border-radius: 0.5em;"><br>
+			    <td><br></td>
+				<input type="submit" value="Entrar" name="entrar" style="background-color:#006400" class="btn btn-primary">
+			</form>
+	<?php } ?>
 <?php include("rodape.php");?>
