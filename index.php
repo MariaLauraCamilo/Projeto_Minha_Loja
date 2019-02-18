@@ -1,7 +1,11 @@
 <?php include("cabecalho.php"); 
 include("logica-usuario.php");
+include("alerta.php");
 ?>
-
+<?php 
+alerta('success');
+alerta('danger');
+?>
 <style type="text/css">
 		body {
 			background-color: #FFFFFF;

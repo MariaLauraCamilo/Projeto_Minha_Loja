@@ -17,15 +17,23 @@ verificaUsuario();
 	
 		if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado)){ 
 	?>
-		<p class="text-success">Produto <?= $nome;?>, <?= $preco;?> adicionado com sucesso!</p>
-
-		<?php } else { 
-			
-			?>
-		<p class="text-danger">Produto <?= $nome;?> não foi adicionado!</p>
-
+		<p class="alert-success">Produto <?= $nome;?>, <?= $preco;?> adicionado com sucesso!</p>
+		<tr>
+			<td>
+				<a href="produto-formulario.php" class="btn btn-primary">Cadastrar mais produtos</a>
+				<a href="index.php" class="btn btn-light">Retornar a Minha Loja</a>
+			</td>
+		</tr>
+		<?php } else { 	?>
+		<p class="alert-danger">Produto <?= $nome;?> não foi adicionado!</p>
+		<tr>
+			<td><a href="produto-formulario.php" class="btn btn-danger">Tentar Novamente</a></td>
+			<a href="index.php" class="btn btn-light">Retornar a Minha Loja</a>
+		</tr>
 	<?php }
 				 
 	?>
+	
+	
 <?php include("rodape.php"); ?>
 			

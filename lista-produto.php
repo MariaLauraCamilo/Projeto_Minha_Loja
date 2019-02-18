@@ -2,14 +2,10 @@
       include("cabecalho.php");
       include("conexao.php");
       include("banco-produto.php"); 
-      include("logica-usuario.php");
+      include("alerta.php");
       ?>
 
-<?php if (isset($_SESSION['success'])) { ?>
-    <p class="alert-success"><?= $_SESSION['success']?></p>
-<?php }  
-    unset($_SESSION['success']); 
-?>
+<?php alerta('success');?>
 
 
 <h1 style="color: #DC143C">Lista de Produtos</h1>
