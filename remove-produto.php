@@ -5,12 +5,12 @@
       include("logica-usuario.php");
 
 $id = $_GET['id'];
-removeProduto($conexao,$id);
+$remover = removeProduto($conexao,$id);
 $_SESSION['success'] = "Produto removido com sucesso!";
-header("Location: lista-produto.php");
+header("Location:lista-produto.php");
 die();
-   
- if (removeProduto($conexao,$id)){ 
+  
+ if ($remover){ 
 	?>
 		<p class="text-success">Produto removido com sucesso!</p>
 
@@ -22,6 +22,4 @@ die();
 	<?php }
 				 
 	?>
-
-?>
 <?php include("rodape.php"); ?>

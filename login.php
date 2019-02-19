@@ -1,5 +1,5 @@
-<?php include ("conexao.php");
-include ("banco-usuario.php");
+<?php include("conexao.php");
+include("banco-usuario.php");
 include("logica-usuario.php");
 
 $email = $_POST['email'];
@@ -10,8 +10,8 @@ if ($usuario == null){
 	$_SESSION['danger'] = "Usuário ou senha inválido!";
 	header("Location: index.php");
 } else {
-	logaUsuario($usuario["email"]);
 	$_SESSION['success'] = "Usuário logado com sucesso!";
+	logaUsuario($usuario['email']);
 	header("Location: index.php");
 	}
 die();

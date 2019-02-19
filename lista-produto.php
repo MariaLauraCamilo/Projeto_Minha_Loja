@@ -1,12 +1,12 @@
 <?php 
       include("cabecalho.php");
       include("conexao.php");
-      include("banco-produto.php"); 
+      include("banco-produto.php");
+      include("logica-usuario.php"); 
       include("alerta.php");
       ?>
 
-<?php alerta('success');?>
-
+<?php alerta("success");?>
 
 <h1 style="color: #DC143C">Lista de Produtos</h1>
 <table class="table table-striped table-bordered">

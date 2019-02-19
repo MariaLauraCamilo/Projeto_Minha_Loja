@@ -30,7 +30,6 @@ function buscaProduto($conexao,$id){
 }
 
 function removeProduto($conexao,$id){
-
 	$query = "DELETE FROM produtos WHERE id = {$id}";
 	$resultado = mysql_query($query,$conexao);
 	return $resultado;
