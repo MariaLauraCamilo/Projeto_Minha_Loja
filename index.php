@@ -1,6 +1,7 @@
-<?php include("cabecalho.php"); 
-include("logica-usuario.php");
-include("alerta.php");
+<?php 
+require_once("cabecalho.php"); 
+require_once("logica-usuario.php");
+require_once("alerta.php");
 ?>
 <?php 
 alerta("success");
@@ -38,4 +39,4 @@ alerta("danger");
 				<input type="submit" value="Entrar" name="entrar" style="background-color:#006400" class="btn btn-primary">
 			</form>
 	<?php } ?>
-<?php include("rodape.php");?>
+<?php require_once("rodape.php");?>

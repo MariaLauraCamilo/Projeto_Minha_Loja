@@ -1,4 +1,6 @@
 <?php
+include ("conexao.php");
+
 function listaProdutos($conexao){
 	$merc = array();
 	$query = "SELECT p.id, p.nome, p.preco, p.descricao, p.usado, c.nome as categoria_nome FROM produtos as p join categorias as c on c.id = p.categoria_id";

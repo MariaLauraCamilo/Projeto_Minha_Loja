@@ -1,10 +1,9 @@
 <?php 
-      include("cabecalho.php");
-      include("conexao.php");
-      include("banco-produto.php");
-      include("logica-usuario.php"); 
-      include("alerta.php");
-      ?>
+require_once("cabecalho.php");
+require_once("banco-produto.php");
+require_once("logica-usuario.php"); 
+require_once("alerta.php");
+?>
 
 <?php alerta("success");?>
 
@@ -36,4 +35,4 @@
     ?>
 </table>
 
-<?php include("rodape.php"); ?>
+<?php require_once("rodape.php"); ?>

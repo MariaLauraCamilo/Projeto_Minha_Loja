@@ -1,8 +1,7 @@
 <?php
-      include("cabecalho.php");
-      include("conexao.php");
-      include("banco-produto.php");
-      include("logica-usuario.php");
+require_once("cabecalho.php");
+require_once("banco-produto.php");
+require_once("logica-usuario.php");
 
 $id = $_GET['id'];
 $remover = removeProduto($conexao,$id);
@@ -22,4 +21,4 @@ die();
 	<?php }
 				 
 	?>
-<?php include("rodape.php"); ?>
+<?php require_once("rodape.php"); ?>

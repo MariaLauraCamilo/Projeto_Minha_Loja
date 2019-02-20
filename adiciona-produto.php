@@ -1,7 +1,7 @@
-<?php include("cabecalho.php"); 
-include ("conexao.php");
-include ("banco-produto.php");
-include("logica-usuario.php");
+<?php 
+require_once("cabecalho.php"); 
+require_once ("banco-produto.php");
+require_once("logica-usuario.php");
 
 verificaUsuario();
 ?>
@@ -35,5 +35,5 @@ verificaUsuario();
 	?>
 	
 	
-<?php include("rodape.php"); ?>
+<?php require_once("rodape.php"); ?>
 			

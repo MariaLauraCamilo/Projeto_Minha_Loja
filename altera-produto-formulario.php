@@ -1,14 +1,12 @@
-<?php include("cabecalho.php"); 
-include ("conexao.php");
-include ("banco-categoria.php");
-include ("banco-produto.php");
+<?php require_once("cabecalho.php"); 
+require_once("banco-categoria.php");
+require_once("banco-produto.php");
 
 $id  = isset($_GET["id"])  ? $_GET["id"]  : "";
 $produto = buscaProduto($conexao,$id);
 $categorias = listaCategorias($conexao);
 $usado = $produto['usado'] ? "checked='checked'" : "";
 ?>
-
 
 <style type="text/css">
 	body{
@@ -21,11 +19,11 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 	<input type="hidden" name="id" value="<?=$produto['id']?>">
 	<table class="table">
 		
-		<?php include("produto-formulario-base.php"); ?>
+		<?php require_once("produto-formulario-base.php"); ?>
 
 		<tr>
 			<td><input style="background-color:#006400" class="btn btn-primary" type="submit" value="Salvar"></td>
 		</tr>
 	</table>
 </form>
-<?php include("rodape.php"); ?>
+<?php require_once("rodape.php"); ?>

@@ -1,7 +1,7 @@
-<?php include("cabecalho.php"); 
-include ("conexao.php");
-include ("banco-categoria.php");
-include("logica-usuario.php");
+<?php 
+require_once("cabecalho.php"); 
+require_once ("banco-categoria.php");
+require_once("logica-usuario.php");
 
 $produto = array('nome' => "", 'descricao' => "", 'preco' => "", 'categoria_id' => "1");
 $usado = "";
@@ -31,11 +31,11 @@ $categorias = listaCategorias($conexao);
 	<form action="adiciona-produto.php" method="POST">
 		<table class="table">
 			
-			<?php include("produto-formulario-base.php"); ?>
+			<?php require_once("produto-formulario-base.php"); ?>
 			
 			<tr>
 				<td><input style="background-color:#006400" class="btn btn-primary" type="submit" value="Cadastrar"></td>
 			</tr>
 		</table>
 	</form>
-<?php include("rodape.php"); ?>
+<?php require_once("rodape.php"); ?>

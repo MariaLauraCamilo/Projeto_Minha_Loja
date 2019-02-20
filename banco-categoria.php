@@ -1,6 +1,7 @@
 <?php
+include ("conexao.php");
 
-Function listaCategorias($conexao){	
+function listaCategorias($conexao){	
 	$categorias = array();
 	$query = "SELECT id, nome FROM categorias";
 	$resultado = mysql_query($query,$conexao);
