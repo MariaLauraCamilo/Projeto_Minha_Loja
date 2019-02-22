@@ -1,11 +1,18 @@
-<?php require_once("cabecalho.php"); 
+<?php 
+require_once("cabecalho.php"); 
 require_once("banco-categoria.php");
 require_once("banco-produto.php");
+require_once("class/Produto.php");
+require_once("class/Categoria.php");
 
-$id  = isset($_GET["id"])  ? $_GET["id"]  : "";
-$produto = buscaProduto($conexao,$id);
-$categorias = listaCategorias($conexao);
-$usado = $produto['usado'] ? "checked='checked'" : "";
+$produto = new Produto();
+$categoria = new Categoria();
+
+listaCategorias($conexao,$produto);
+
+$produto->id  = isset($_GET["id"])  ? $_GET["id"]  : "";
+$produto_usado = $produto->usado ? "checked='checked'" : "";
+
 ?>
 
 <style type="text/css">
@@ -16,7 +23,7 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 
 <h1 style="color: #DC143C">Formulário do Produto</h1>
 <form action="altera-produto.php" method="GET">
-	<input type="hidden" name="id" value="<?=$produto['id']?>">
+	<input type="hidden" name="id" value="<?=$produto->id?>">
 	<table class="table">
 		
 		<?php require_once("produto-formulario-base.php"); ?>

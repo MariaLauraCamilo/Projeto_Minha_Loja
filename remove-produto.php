@@ -2,8 +2,11 @@
 require_once("cabecalho.php");
 require_once("banco-produto.php");
 require_once("logica-usuario.php");
+require_once("class/Produto.php");
 
-$id = $_GET['id'];
+#$produto = new Produto();
+
+$id = isset($_GET["id"])  ? $_GET["id"]  : "";
 $remover = removeProduto($conexao,$id);
 $_SESSION['success'] = "Produto removido com sucesso!";
 header("Location:lista-produto.php");
