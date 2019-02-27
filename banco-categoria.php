@@ -12,10 +12,10 @@ function listaCategorias($conexao){
 
 		$produto = new Produto();
 		$categoria = new Categoria();
-		$produto->categoria = $categoria;
-
-	    $categoria->id = $categoria_array['id'];
-	    $categoria->nome = $categoria_array['nome'];
+		$produto->setCategoria($categoria);
+		
+	    $categoria->setId($categoria_array['id']);
+	    $categoria->setNome($categoria_array['nome']);
 
 		array_push($categorias, $categoria); 
 	}

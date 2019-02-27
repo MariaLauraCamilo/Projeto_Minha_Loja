@@ -14,7 +14,7 @@ $categoria = new Categoria();
 
 listaCategorias($conexao,$produto);
 $produto->produto_array = array('nome' => "", 'descricao' => "", 'preco' => "", 'categoria->id' => "1");
-$produto->usado = "";
+$produto->getUsado("");
 ?>
 
 

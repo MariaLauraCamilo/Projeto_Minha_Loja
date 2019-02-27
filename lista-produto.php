@@ -14,19 +14,21 @@ require_once("class/Categoria.php");
 <table class="table table-striped table-bordered">
 
     <?php
-        $merc = listaProdutos($conexao);
-        foreach ($merc as $produto) :
+    
+        $produtos = listaProdutos($conexao);
+        foreach ($produtos as $produto) :
     ?>
     <tr>
-        <td><?=$produto->nome?></td>
-        <td><?=$produto->preco ?></td>
-        <td><?= substr($produto->descricao, 0, 40)?></td>
-        <td><?=$produto->categoria->nome?></td>
+        <td><?=$produto->getNome()?></td>
+        <td><?=$produto->getPreco()?></td>
+        <td><?=$produto->precoComDesconto(0.1)?></td>
+        <td><?= substr($produto->getDescricao(), 0, 40)?></td>
+        <td><?=$produto->getCategoria()->getNome()?></td>
         <td>
-            <a class="btn btn-primary" href="altera-produto-formulario.php?id=<?=$produto->id?>">Editar</a> 
+            <a class="btn btn-primary" href="altera-produto-formulario.php?id=<?=$produto->getId()?>">Editar</a> 
         </td>
         <td>
-            <form action="remove-produto.php?id=<?=$produto->id?>" method="POST">
+            <form action="remove-produto.php?id=<?=$produto->getId()?>" method="POST">
                 <button class="btn btn-danger">X</button>
             </form>
         </td>

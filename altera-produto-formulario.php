@@ -8,10 +8,10 @@ require_once("class/Categoria.php");
 $produto = new Produto();
 $categoria = new Categoria();
 
-listaCategorias($conexao,$produto);
+$listaCategorias = listaCategorias($conexao);
 
-$produto->id  = isset($_GET["id"])  ? $_GET["id"]  : "";
-$produto_usado = $produto->usado ? "checked='checked'" : "";
+$produto->setId(isset($_GET["id"])  ? $_GET["id"]  : "");
+$produto_usado = $produto->getUsado() ? "checked='checked'" : "";
 
 ?>
 
@@ -23,7 +23,7 @@ $produto_usado = $produto->usado ? "checked='checked'" : "";
 
 <h1 style="color: #DC143C">Formulário do Produto</h1>
 <form action="altera-produto.php" method="GET">
-	<input type="hidden" name="id" value="<?=$produto->id?>">
+	<input type="hidden" name="id" value="<?=$produto->getId()?>">
 	<table class="table">
 		
 		<?php require_once("produto-formulario-base.php"); ?>

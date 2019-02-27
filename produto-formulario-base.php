@@ -1,4 +1,5 @@
 <?php 
+
 require_once("banco-categoria.php");
 require_once("banco-produto.php");
 require_once("class/Produto.php");
@@ -13,19 +14,19 @@ if(isset($_GET["id"])){
 
 <tr>
 	<td style="color: #696969">Nome</td>
-	<td><input class="form-control" type="text" name="nome" value="<?=$produto->nome?>"><br/></td>
+	<td><input class="form-control" type="text" name="nome" value="<?=$produto->getNome()?>"><br/></td>
 </tr>
 <tr>
 	<td style="color: #696969">Preço</td>
-	<td><input class="form-control" type="number" name="preco" value="<?=$produto->preco?>"><br/></td>
+	<td><input class="form-control" type="number" name="preco" value="<?=$produto->getPreco()?>"><br/></td>
 </tr>
 <tr>
 	<td style="color: #696969">Descrição</td>
-	<td><textarea name="descricao" class="form-control"><?=$produto->descricao?></textarea></td>
+	<td><textarea name="descricao" class="form-control"><?=$produto->getDescricao()?></textarea></td>
 </tr>
 <tr>
 	<td></td>
-	<td><input type="checkbox" name="usado" <?=$produto->usado?> value="true"> Usado
+	<td><input type="checkbox" name="usado" <?=$produto->getUsado()?> value="true"> Usado
 </tr>
 <tr>
 	<td style="color: #696969">Categoria</td>
@@ -35,14 +36,16 @@ if(isset($_GET["id"])){
 
 			foreach ($listaCategorias as $categoria) :
 
-
-				$CategoriaSelecionada = $produto->categoria->id == $categoria->id;
-				$selecao = $CategoriaSelecionada ? "selected='selected'" : "";
+                 $selecao = "";
+				if($produto->getCategoria() != null){
+					$CategoriaSelecionada = $produto->getCategoria()->getId() == $categoria->getId();
+					$selecao = $CategoriaSelecionada ? "selected='selected'" : "";
+				}
 
 			?>
 	
-			<option value="<?=$categoria->id?>"<?=$selecao?>>
-				<?=$categoria->nome?><br/>
+			<option value="<?=$categoria->getId()?>"<?=$selecao?>>
+				<?=$categoria->getNome()?><br/>
 			</option> 
 			<?php endforeach ?> 
 		 </select>
