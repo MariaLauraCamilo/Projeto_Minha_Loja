@@ -16,12 +16,8 @@ die();
 	?>
 		<p class="text-success">Produto removido com sucesso!</p>
 
-		<?php } else { 
-			
-			?>
+		<?php } else { ?>
 		<p class="text-danger">Erro ao remover o produto!</p>
 
-	<?php }
-				 
-	?>
+	<?php } ?>
 <?php require_once("rodape.php"); ?>

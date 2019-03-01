@@ -6,7 +6,7 @@ require_once("class/Produto.php");
 require_once("class/Categoria.php");
 
 
-$listaCategorias = listaCategorias($conexao,$produto);
+$listaCategorias = listaCategorias($conexao);
 if(isset($_GET["id"])){
 	$produto = buscaProduto($conexao,$_GET["id"]);
 }

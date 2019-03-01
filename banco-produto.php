@@ -7,8 +7,8 @@ require_once("class/Categoria.php");
 function listaProdutos($conexao){
 	$produtos = array();
 	$query = "SELECT p.id, p.nome, p.preco, p.descricao, p.usado, c.nome as categoria_nome FROM produtos as p join categorias as c on c.id = p.categoria_id";
-	$resultado = mysql_query($query,$conexao);
-	while ($produto_array = mysql_fetch_assoc($resultado)) {
+	$resultado = mysqli_query($conexao, $query);
+	while ($produto_array = mysqli_fetch_assoc($resultado)) {
 		
 		$produto = new Produto();
 		$categoria = new Categoria();
@@ -30,21 +30,21 @@ return $produtos;
 //Função para adicionar os Produtos
  function insereProduto($conexao, Produto $produto){
  	$query = "INSERT INTO produtos (nome, preco, descricao, categoria_id, usado) values ('{$produto->getNome()}', {$produto->getPreco()}, '{$produto->getDescricao()}', {$produto->getCategoria()->getId()}, {$produto->getUsado()})";
-	$resultado = mysql_query($query,$conexao);
+	$resultado = mysqli_query($conexao, $query);
 	return $resultado;
 }
  
  //Função para alterar algum produto
 function alteraProduto($conexao, Produto $produto){
 	$query = "UPDATE produtos SET nome='{$produto->getNome()}', preco= {$produto->getPreco()} , descricao= '{$produto->getDescricao()}', categoria_id= {$produto->getCategoria()->getId()}, usado= {$produto->getUsado()} WHERE id = {$produto->getId()}";
-	$resultado = mysql_query($query,$conexao);
+	$resultado = mysqli_query($conexao,$query);
 	return $resultado;
 }
 //Função para buscar um produto
 function buscaProduto($conexao,$id){
 	$query = "SELECT id, nome, preco, descricao, categoria_id, usado FROM produtos WHERE id = {$id}";
-	$resultado = mysql_query($query,$conexao);
-	$produto_buscado = mysql_fetch_assoc($resultado);
+	$resultado = mysqli_query($conexao,$query);
+	$produto_buscado = mysqli_fetch_assoc($resultado);
 
 
 	$categoria = new Categoria();
@@ -64,8 +64,8 @@ function buscaProduto($conexao,$id){
 //Função para remover um produto
 function removeProduto($conexao,$id){
 	$query = "DELETE FROM produtos WHERE id = {$id}";
-	$resultado = mysql_query($query,$conexao);
-	$produto_deletar = mysql_fetch_assoc($resultado);
+	$resultado = mysqli_query($conexao,$query);
+	$produto_deletar = mysqli_fetch_assoc($resultado);
 
 	/*$produto = new Produto();
 	$categoria = new Categoria();

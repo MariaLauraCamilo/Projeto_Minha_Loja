@@ -1,7 +1,7 @@
 <?php 
 require_once("cabecalho.php"); 
 require_once("conexao.php");
-require_once ("banco-categoria.php");
+require_once("banco-categoria.php");
 require_once("logica-usuario.php");
 require_once("class/Produto.php");
 require_once("class/Categoria.php");
@@ -12,9 +12,9 @@ verificaUsuario();
 $produto = new Produto();
 $categoria = new Categoria();
 
-listaCategorias($conexao,$produto);
+$listaCategorias = listaCategorias($conexao);
 $produto->produto_array = array('nome' => "", 'descricao' => "", 'preco' => "", 'categoria->id' => "1");
-$produto->getUsado("");
+$produto->getUsado();
 ?>
 
 

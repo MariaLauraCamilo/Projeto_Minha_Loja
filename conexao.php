@@ -1,3 +1,3 @@
 <?php
-$conexao = mysql_connect('localhost', 'root', '', 'minhaloja');
-mysql_select_db ('minhaloja' , $conexao);
+$conexao = mysqli_connect('localhost', 'root', '', 'minhaloja');
+mysqli_select_db($conexao, 'minhaloja');
